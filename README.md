@@ -1,12 +1,12 @@
 # Youtube Video Analysis and Classification
 
-This project analyzes trending YouTube videos from August 2020 to present. It explores the attributes of trending videos, such popular channels, categories, and keywords. It also trains a linear SVC model to classify videos by category, using tokens extracted from video titles and tags by NLTK.
+This project analyzes trending YouTube videos from August 2020 to present. It explores the attributes of trending videos, such popular channels, categories, and keywords. It also trains a stochastic gradient descent model to classify videos by category, using tokens extracted from video titles and tags by NLTK.
 
 [Data Source](https://www.kaggle.com/datasets/rsrishav/youtube-trending-video-dataset)
 
 ## Results
 
-Number of unique videos indexed: 38423
+Number of unique videos indexed: 38747
 
 ### Top Videos of All Time
 
@@ -100,13 +100,22 @@ Number of unique videos indexed: 38423
       <td>91463891</td>
     </tr>
     <tr>
-      <th>207388</th>
-      <td>$1 vs $1,000,000,000 Yacht!</td>
-      <td>MrBeast</td>
+      <th>212991</th>
+      <td>Jawan |Official Hindi Prevue |Shah Rukh Khan |...</td>
+      <td>Red Chillies Entertainment</td>
       <td>Entertainment</td>
-      <td>2023-06-10 16:00:00</td>
-      <td>[None]</td>
-      <td>39951228</td>
+      <td>2023-07-10 04:58:09</td>
+      <td>SRK|Shah rukh khan|shahruh khan|Srk movies|red...</td>
+      <td>51798724</td>
+    </tr>
+    <tr>
+      <th>213788</th>
+      <td>정국 (Jung Kook) 'Seven (feat. Latto)' Official MV</td>
+      <td>HYBE LABELS</td>
+      <td>Music</td>
+      <td>2023-07-14 04:00:00</td>
+      <td>HYBE|HYBE LABELS|하이브|하이브레이블즈|정국|Jung Kook|Seven</td>
+      <td>41185831</td>
     </tr>
     <tr>
       <th>211790</th>
@@ -118,22 +127,13 @@ Number of unique videos indexed: 38423
       <td>36842906</td>
     </tr>
     <tr>
-      <th>210464</th>
-      <td>LEO - Naa Ready Lyric Video | Thalapathy Vijay...</td>
-      <td>Sony Music South</td>
-      <td>Music</td>
-      <td>2023-06-22 13:00:04</td>
-      <td>Sony Music South|Sony Music|Latest Song|Tamil ...</td>
-      <td>29476135</td>
-    </tr>
-    <tr>
-      <th>210995</th>
-      <td>Tum Kya Mile - Rocky Aur Rani Kii Prem Kahaani...</td>
-      <td>Saregama Music</td>
-      <td>Music</td>
-      <td>2023-06-28 06:30:08</td>
-      <td>Tum Kya Mile|tu kya mile|rocky aur ranii ki pr...</td>
-      <td>28188098</td>
+      <th>212588</th>
+      <td>Train Vs Giant Pit</td>
+      <td>MrBeast</td>
+      <td>Entertainment</td>
+      <td>2023-07-08 16:00:00</td>
+      <td>[None]</td>
+      <td>33142241</td>
     </tr>
   </tbody>
 </table>
@@ -162,14 +162,20 @@ Number of unique videos indexed: 38423
     <tr>
       <th>MrBeast</th>
       <td>Entertainment</td>
-      <td>64</td>
-      <td>1258200526</td>
+      <td>65</td>
+      <td>1291342767</td>
     </tr>
     <tr>
       <th>NBA</th>
       <td>Sports</td>
-      <td>365</td>
-      <td>716335767</td>
+      <td>367</td>
+      <td>719057959</td>
+    </tr>
+    <tr>
+      <th>HYBE LABELS</th>
+      <td>Music</td>
+      <td>67</td>
+      <td>703937472</td>
     </tr>
     <tr>
       <th>BLACKPINK</th>
@@ -178,16 +184,10 @@ Number of unique videos indexed: 38423
       <td>689071265</td>
     </tr>
     <tr>
-      <th>HYBE LABELS</th>
-      <td>Music</td>
-      <td>63</td>
-      <td>630171785</td>
-    </tr>
-    <tr>
       <th>SMTOWN</th>
       <td>Music</td>
-      <td>73</td>
-      <td>596206850</td>
+      <td>74</td>
+      <td>601840367</td>
     </tr>
     <tr>
       <th>NFL</th>
@@ -196,22 +196,22 @@ Number of unique videos indexed: 38423
       <td>529529265</td>
     </tr>
     <tr>
-      <th>BANGTANTV</th>
-      <td>Music</td>
-      <td>72</td>
-      <td>483997142</td>
-    </tr>
-    <tr>
       <th>JYP Entertainment</th>
       <td>Music</td>
-      <td>73</td>
-      <td>475306303</td>
+      <td>75</td>
+      <td>501748170</td>
+    </tr>
+    <tr>
+      <th>BANGTANTV</th>
+      <td>Music</td>
+      <td>74</td>
+      <td>492688501</td>
     </tr>
     <tr>
       <th>MrBeast Gaming</th>
       <td>Gaming</td>
-      <td>76</td>
-      <td>464474880</td>
+      <td>77</td>
+      <td>477439867</td>
     </tr>
     <tr>
       <th>SSSniperWolf</th>
@@ -245,62 +245,62 @@ Number of unique videos indexed: 38423
     <tr>
       <th>Entertainment</th>
       <td>SSSniperWolf</td>
-      <td>7534</td>
-      <td>11110425977</td>
+      <td>7609</td>
+      <td>11319529027</td>
     </tr>
     <tr>
       <th>Music</th>
       <td>JYP Entertainment</td>
-      <td>6063</td>
-      <td>10581632934</td>
+      <td>6126</td>
+      <td>10805752685</td>
     </tr>
     <tr>
       <th>Gaming</th>
       <td>SSundee</td>
-      <td>7643</td>
-      <td>7652487573</td>
+      <td>7706</td>
+      <td>7705949654</td>
     </tr>
     <tr>
       <th>Sports</th>
       <td>NBA</td>
-      <td>4813</td>
-      <td>5397357247</td>
+      <td>4850</td>
+      <td>5430000082</td>
     </tr>
     <tr>
       <th>People &amp; Blogs</th>
-      <td>Unspeakable</td>
-      <td>3381</td>
-      <td>3263650055</td>
+      <td>Ryland vlogs</td>
+      <td>3399</td>
+      <td>3274057443</td>
     </tr>
     <tr>
       <th>Film &amp; Animation</th>
       <td>The Film Theorists</td>
-      <td>1455</td>
-      <td>2004977179</td>
+      <td>1474</td>
+      <td>2038739612</td>
     </tr>
     <tr>
       <th>Comedy</th>
       <td>The Try Guys</td>
-      <td>1917</td>
-      <td>1751954766</td>
+      <td>1926</td>
+      <td>1759602894</td>
     </tr>
     <tr>
       <th>Science &amp; Technology</th>
       <td>SpaceX</td>
-      <td>1150</td>
-      <td>1630478802</td>
+      <td>1160</td>
+      <td>1638284204</td>
     </tr>
     <tr>
       <th>News &amp; Politics</th>
       <td>TODAY</td>
-      <td>1421</td>
-      <td>1379421249</td>
+      <td>1423</td>
+      <td>1379830580</td>
     </tr>
     <tr>
       <th>Education</th>
       <td>Veritasium</td>
-      <td>900</td>
-      <td>836960823</td>
+      <td>909</td>
+      <td>845022489</td>
     </tr>
   </tbody>
 </table>
@@ -323,72 +323,72 @@ Number of unique videos indexed: 38423
     <tr>
       <th>minecraft</th>
       <td>minecraft</td>
-      <td>34508</td>
-      <td>33380448882</td>
-      <td>9.673249e+05</td>
+      <td>34830</td>
+      <td>33580390908</td>
+      <td>9.641226e+05</td>
     </tr>
     <tr>
       <th>video</th>
       <td>video</td>
-      <td>24108</td>
-      <td>34381882370</td>
-      <td>1.426161e+06</td>
+      <td>24278</td>
+      <td>34699189288</td>
+      <td>1.429244e+06</td>
     </tr>
     <tr>
       <th>game</th>
       <td>game</td>
-      <td>21848</td>
-      <td>25972128652</td>
-      <td>1.188765e+06</td>
+      <td>22004</td>
+      <td>26083874834</td>
+      <td>1.185415e+06</td>
     </tr>
     <tr>
       <th>new</th>
       <td>new</td>
-      <td>18894</td>
-      <td>22332231952</td>
-      <td>1.181975e+06</td>
+      <td>19028</td>
+      <td>22807741340</td>
+      <td>1.198641e+06</td>
     </tr>
     <tr>
       <th>v</th>
       <td>v</td>
-      <td>17668</td>
-      <td>22932122040</td>
-      <td>1.297947e+06</td>
+      <td>17784</td>
+      <td>23170427768</td>
+      <td>1.302881e+06</td>
     </tr>
     <tr>
       <th>highlight</th>
       <td>highlight</td>
-      <td>17456</td>
-      <td>20908652800</td>
-      <td>1.197792e+06</td>
+      <td>17544</td>
+      <td>20988444796</td>
+      <td>1.196332e+06</td>
     </tr>
     <tr>
       <th>official</th>
       <td>official</td>
-      <td>14498</td>
-      <td>22655730148</td>
-      <td>1.562680e+06</td>
+      <td>14652</td>
+      <td>23290492236</td>
+      <td>1.589578e+06</td>
     </tr>
     <tr>
       <th>music</th>
       <td>music</td>
-      <td>13336</td>
-      <td>19848655476</td>
-      <td>1.488351e+06</td>
+      <td>13432</td>
+      <td>19947386876</td>
+      <td>1.485065e+06</td>
     </tr>
     <tr>
       <th>none</th>
       <td>none</td>
-      <td>12756</td>
-      <td>18654062734</td>
-      <td>1.462376e+06</td>
+      <td>12852</td>
+      <td>18813573170</td>
+      <td>1.463863e+06</td>
     </tr>
     <tr>
       <th>fortnite</th>
       <td>fortnite</td>
-      <td>12374</td>
-      <td>9337444342</td>
-      <td>7.546019e+05</td>
+      <td>12404</td>
+      <td>9355179560</td>
+      <td>7.542067e+05</td>
     </tr>
   </tbody>
 </table>
